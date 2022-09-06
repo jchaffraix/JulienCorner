@@ -1,0 +1,17 @@
+<!DOCTYPE>
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js" integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script id="image-template" type="text/x-handlebars-template">
+    {{#each photo }}
+      <a href="https://www.flickr.com/photos/{{owner}}/{{id}}/">
+        <img src="https://live.staticflickr.com/{{server}}/{{id}}_{{secret}}.jpg" alt="{{title}}"/>
+      </a>
+    {{/each}}
+    <footer>{{count photo}} out of {{perpage}} returned</footer>
+  </script>
+  <script src="main.js"></script>
+</head>
+<html>
+  <!-- TODO: Add a select to choose the query -->
+  <div id="images"></div>
+</html>

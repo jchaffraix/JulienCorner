@@ -1,0 +1,9 @@
+# VIM
+*.swp
+
+# Ignore binaries
+main.exe
+main
+
+# Explicitly ignore some files for testing
+ignoreme/
