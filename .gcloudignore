@@ -1,0 +1,9 @@
+# Ignore git files
+.git
+.gitignore
+
+# GitHub files
+README
+LICENSE
+
+#!include:.gitignore
