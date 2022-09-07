@@ -8,6 +8,15 @@
       </a>
     {{/each}}
     <footer>{{count photo}} out of {{perpage}} returned</footer>
+    <footer>
+      {{#if previous}}
+        <a href="/cats?page={{previous}}">Previous</a> - 
+      {{/if}}
+      {{page}} out of {{pages}}
+      {{#if next}}
+        - <a href="/cats?page={{next}}">Next</a>
+      {{/if}}
+    </footer>
   </script>
   <script src="main.js"></script>
 </head>
