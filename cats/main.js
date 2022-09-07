@@ -2,16 +2,17 @@ function $(id) {
   return document.getElementById(id);
 }
 Handlebars.registerHelper('count', function (aVec) {
-    return aVec.length;
+  return aVec.length;
 });
 
 function shouldIgnorePhotosBasedOnTag(tags) {
   // Ignore second life renderings (there is a lot of those...).
-  if (tags.indexOf("secondlife") != -1 || tags.indexOf("second life") != -1 || tags.indexOf("SL") != -1) {
+  if (tags.indexOf("secondlife") != -1 || tags.indexOf("second life") != -1 || tags.indexOf("lelutka") != -1 || tags.indexOf("versov") != -1) {
     return true
   }
 
-  if (tags.indexOf("anime") != -1) {
+  // Remove some genre
+  if (tags.indexOf("anime") != -1 || tags.indexOf("fantasy") != -1) {
     return true
   }
 
