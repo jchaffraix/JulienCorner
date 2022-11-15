@@ -1,6 +1,7 @@
 function $(id) {
   return document.getElementById(id);
 }
+
 Handlebars.registerHelper('count', function (aVec) {
   return aVec.length;
 });
@@ -25,7 +26,7 @@ function shouldIgnorePhotosBasedOnTag(tags) {
 
 function shouldIgnoreAuthor(author) {
   // Spammy or just not the right style.
-  return author == "194326640@N04" || author == "183799697@N04" || author == "166977808@N03";
+  return author == "194326640@N04" || author == "183799697@N04" || author == "166977808@N03" || author == "131105584@N02";
 }
 
 function filterPhotos(photos) {
