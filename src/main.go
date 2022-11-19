@@ -52,7 +52,7 @@ func mainPageHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Par
     return
   }
 
-  md, err := ioutil.ReadFile("./index.md")
+  md, err := ioutil.ReadFile("html/index.md")
   if err != nil {
     renderFailedPage(w)
     return
@@ -84,7 +84,7 @@ func main() {
   // Note: Some limitations of ServeFile are:
   // 1. that if there is no 'index.html' in the directory, this will show the directory.
   // 2. there is no Content-Type set on the file served.
-  router.ServeFiles("/cats/*filepath", http.Dir("./cats"))
+  router.ServeFiles("/cats/*filepath", http.Dir("html/cats"))
   // TODO: Add XSS prevention using BlueMonday.
 
   port := os.Getenv("PORT")
