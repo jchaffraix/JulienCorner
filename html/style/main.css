@@ -1,0 +1,102 @@
+@font-face {
+  font-family: "dmmono";
+  src: url(/style/font/DMMono-Light.ttf) format("truetype");
+  font-weight: 300;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: "dmmono";
+  src: url(/style/font/DMMono-LightItalic.ttf) format("truetype");
+  font-style: italic;
+  font-weight: 300;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: "dmmono";
+  src: url(/style/font/DMMono-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: "dmmono";
+  src: url(/style/font/DMMono-Italic.ttf) format("truetype");
+  font-style: italic;
+  font-weight: 400;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: "dmmono";
+  src: url(/style/font/DMMono-Medium.ttf) format("truetype");
+  font-weight: 500;
+  font-stretch: 100%;
+}
+
+@font-face {
+  font-family: "dmmono";
+  src: url(/style/font/DMMono-MediumItalic.ttf) format("truetype");
+  font-style: italic;
+  font-weight: 500;
+  font-stretch: 100%;
+}
+
+
+html {
+  background-color: #fff;
+  font-size: 1.25rem;
+  min-width: 300px;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: dmmono;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 2rem;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  font-weight: 500 !important;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.1;
+  font-weight: 500 !important;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 1.1;
+  font-weight: 500 !important;
+}
+
+section {
+  padding: 3rem 1.5rem;
+  flex-grow: 1;
+}
+
+.subtitle {
+  color: #4a4a4a;
+  margin-bottom: 1.5rem;
+}
+
+footer {
+  flex-basis: fit-content;
+  flex-grow: 0;
+  background-color: #fafafa;
+  padding: 3rem 1.5rem;
+  font-weight: 300;
+  text-align: center;
+}
+
+.icon {
+  height: 1em;
+}

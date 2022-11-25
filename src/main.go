@@ -64,15 +64,21 @@ func mainPageHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Par
   renderer := html.NewRenderer(opts)
   output := `<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/style/main.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<section>
 `
   output += string(markdown.ToHTML(md, nil, renderer))
-  output += `</body>
+  output += `</section>
+ <footer>
+  <a href="https://www.linkedin.com/in/jchaffraix"><img class="icon" src="/style/icons/linkedin.svg"></img></a><br/>
+  Made with <img class="icon" src="/style/icons/heart.svg"></img>.
+</footer>
+</body>
 </html>`
   w.Header().Add("Content-Type", "text/html")
   w.Write([]byte(output))
@@ -85,6 +91,7 @@ func main() {
   // 1. that if there is no 'index.html' in the directory, this will show the directory.
   // 2. there is no Content-Type set on the file served.
   router.ServeFiles("/cats/*filepath", http.Dir("html/cats"))
+  router.ServeFiles("/style/*filepath", http.Dir("html/style"))
   // TODO: Add XSS prevention using BlueMonday.
 
   port := os.Getenv("PORT")
