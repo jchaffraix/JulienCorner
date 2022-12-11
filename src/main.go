@@ -54,6 +54,7 @@ func mainPageHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Par
 
   md, err := ioutil.ReadFile("html/index.md")
   if err != nil {
+    log.Printf("Error reading main file %+v", err)
     renderFailedPage(w)
     return
   }
