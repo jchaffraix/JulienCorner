@@ -92,6 +92,7 @@ func main() {
   // 1. that if there is no 'index.html' in the directory, this will show the directory.
   // 2. there is no Content-Type set on the file served.
   router.ServeFiles("/cats/*filepath", http.Dir("html/cats"))
+  router.ServeFiles("/habits/*filepath", http.Dir("html/habits"))
   router.ServeFiles("/style/*filepath", http.Dir("html/style"))
   // TODO: Add XSS prevention using BlueMonday.
 
