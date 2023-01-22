@@ -100,3 +100,7 @@ footer {
 .icon {
   height: 1em;
 }
+
+pre {
+  white-space: pre-wrap;
+}
