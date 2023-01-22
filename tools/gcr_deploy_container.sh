@@ -17,4 +17,4 @@ docker push "$LABEL"
 echo "Pushed image successfully"
 echo ""
 # TODO: Automate this through some CD hook.
-echo "Do not forget to go on https://console.cloud.google.com/ to deploy the new revision on Cloud
+echo "The new container needs to be deployed on https://console.cloud.google.com/run/detail/us-east1/${PROJECT}"
