@@ -11,9 +11,11 @@ export LABEL="${REPOSITORY}/${PROJECT}/${IMAGE_NAME}:${TAG}"
 
 # Check that we pass an authorization for a service account and log into it.
 # Else for CLI invokation, we just use any existing credentials.
-export SERVICE_ACCT_FILE="${SERVICE_ACCT_FILE:-}"
-if [[ "$SERVICE_ACCT_FILE" != "" ]]; then
-  gcloud auth login --cred-file="$SERVICE_ACCT_FILE"
+export SERVICE_ACCNT_FILE="${SERVICE_ACCNT_FILE:-}"
+if [[ "$SERVICE_ACCNT_FILE" != "" ]]; then
+  gcloud auth activate-service-account "${SERVICE_ACCNT}" --key-file="$SERVICE_ACCNT_FILE"
+  gcloud config set project "$PROJECT"
+  gcloud auth configure-docker "$REPOSITORY"
 fi
 
 docker build -t "$LABEL" .

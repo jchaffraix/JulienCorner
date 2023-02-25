@@ -1,0 +1,25 @@
+name: Build and Deploy
+on:
+  push:
+    branches: [ main ]
+
+env:
+  SERVICE_ACCNT_FILE: './key'
+
+jobs:
+  deploy-main:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checking out the code
+        uses: actions/checkout@v3
+      - name: Storing key to a file
+        env:
+          SERVICE_ACCNT_KEY: ${{ secrets.SERVICE_ACCNT_KEY }}
+        run: 'echo "$SERVICE_ACCNT_KEY" > "$SERVICE_ACCNT_FILE"'
+      # TODO: We should probably separate building and deploying.
+      # TODO: We should also do some sanity checks before deploying...
+      - name: Building and deploying
+        run: |
+          ./tools/gcr_deploy_container.sh
+        env:
+          SERVICE_ACCNT: ${{ secrets.SERVICE_ACCNT }}
