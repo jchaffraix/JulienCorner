@@ -71,6 +71,22 @@ func renderPageHTML(w http.ResponseWriter, content string) {
   w.Write([]byte(output))
 }
 
+func renderMarkdown(w http.ResponseWriter, path string) {
+  md, err := ioutil.ReadFile(path)
+  if err != nil {
+    log.Printf("Error reading file %s: %+v", path, err)
+    renderFailedPage(w)
+    return
+  }
+
+  opts := html.RendererOptions{
+    Flags: html.FlagsNone,
+    RenderNodeHook: customizeCSS,
+  }
+  renderer := html.NewRenderer(opts)
+  renderPageHTML(w, string(markdown.ToHTML(md, nil, renderer)))
+}
+
 func mainPageHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Params) {
   logRequest(req)
 
@@ -79,18 +95,13 @@ func mainPageHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Par
     return
   }
 
-  md, err := ioutil.ReadFile("html/index.md")
-  if err != nil {
-    log.Printf("Error reading main file %+v", err)
-    renderFailedPage(w)
-    return
-  }
-  opts := html.RendererOptions{
-    Flags: html.FlagsNone,
-    RenderNodeHook: customizeCSS,
-  }
-  renderer := html.NewRenderer(opts)
-  renderPageHTML(w, string(markdown.ToHTML(md, nil, renderer)))
+  renderMarkdown(w, "html/index.md")
+}
+
+func mentoringHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Params) {
+  logRequest(req)
+
+  renderMarkdown(w, "html/mentoring/topics.md")
 }
 
 type License struct {
@@ -104,10 +115,6 @@ func licensesHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Par
   logRequest(req)
 
   licenses := []License{
-    License {
-      Path: "html/style/font/OFL.txt",
-      Intro: `The font for the site is DM mono. It can be found on <a href="https://github.com/googlefonts/dm-mono">GitHub</a> and its license is:`,
-    },
     License {
       Path: "",
       Intro: `The icons come from the excellent <a href="http://fontawesome.com">FontAwesome Project</a>. Its license can be found on <a href="https://fontawesome.com/license/free">here</a>.`,
@@ -144,6 +151,7 @@ func licensesHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Par
 func main() {
   router := httprouter.New()
   router.GET("/", mainPageHandler)
+  router.GET("/mentoring", mentoringHandler)
   router.GET("/licenses", licensesHandler)
   // Note: Some limitations of ServeFile are:
   // 1. that if there is no 'index.html' in the directory, this will show the directory.
