@@ -5,13 +5,14 @@ FROM alpine as build
 RUN apk add --no-cache go git make
 
 # Create a user with no priviledge
+RUN addgroup -S builder
 RUN adduser -S -D -H builder
 
 # Install smu for generating the Markdown files.
 RUN git clone https://github.com/Gottox/smu.git smu
 RUN cd smu && make && make install && cd ..
 
-COPY --chown=builder . /src
+COPY --chown=builder:builder . /src
 
 USER builder
 
