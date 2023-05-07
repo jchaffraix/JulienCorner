@@ -38,8 +38,9 @@ RUN mkdir -p /var/www/html
 RUN chown -R server:server /var/www
 
 # Copy the content to render.
-COPY --from=build --chown=server:server /src/main /var/www
+COPY --from=build --chown=server:server /src/main /var/www/
 COPY --from=build --chown=server:server /src/build/ /var/www/html
+COPY --from=build --chown=server:server /src/LICENSE /var/www/
 WORKDIR /var/www
 
 USER server
