@@ -2,25 +2,29 @@
 
 FROM alpine as build
 
-# TODO: Split the build from the final container to avoid extra deps.
-RUN apk add --no-cache go
+RUN apk add --no-cache go git make
 
 # Create a user with no priviledge
 RUN adduser -S -D -H builder
 
-RUN mkdir /src
-RUN chown builder /src
-COPY src/ /src
-COPY go.mod /src
-COPY go.sum /src
+# Install smu for generating the Markdown files.
+RUN git clone https://github.com/Gottox/smu.git smu
+RUN cd smu && make && make install && cd ..
+
+COPY --chown=builder:builder . /src
 
 USER builder
+
+## Build Go binary.
 # For building go without a home directory.
 ENV GOPATH=/src/mod/
-ENV GOCACHE=/src/go-cache
+ENV GOCACHE=/src/src/go-cache
 
 WORKDIR /src
-RUN go build main.go
+RUN go build src/main.go
+
+## Generate the Markdown files.
+RUN ./tools/generate_markdown.sh
 
 ### Final image.
 
@@ -34,8 +38,8 @@ RUN mkdir -p /var/www/html
 RUN chown -R server:server /var/www
 
 # Copy the content to render.
-COPY html /var/www/html/
 COPY --from=build --chown=server:server /src/main /var/www
+COPY --from=build --chown=server:server /src/build/ /var/www/html
 WORKDIR /var/www
 
 USER server

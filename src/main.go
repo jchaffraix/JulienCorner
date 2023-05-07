@@ -95,13 +95,15 @@ func mainPageHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Par
     return
   }
 
-  renderMarkdown(w, "html/index.md")
-}
+  main_page, err := ioutil.ReadFile("html/index.html")
+  if err != nil {
+    log.Printf("Error reading main license %+v", err)
+    renderFailedPage(w)
+    return
 
-func mentoringHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Params) {
-  logRequest(req)
-
-  renderMarkdown(w, "html/mentoring/topics.md")
+  }
+  w.Header().Add("Content-Type", "text/html")
+  w.Write([]byte(main_page))
 }
 
 type License struct {
@@ -151,8 +153,9 @@ func licensesHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Par
 func main() {
   router := httprouter.New()
   router.GET("/", mainPageHandler)
-  router.GET("/mentoring", mentoringHandler)
   router.GET("/licenses", licensesHandler)
+  router.ServeFiles("/posts/*filepath", http.Dir("html/posts"))
+  router.ServeFiles("/pages/*filepath", http.Dir("html/pages"))
   // Note: Some limitations of ServeFile are:
   // 1. that if there is no 'index.html' in the directory, this will show the directory.
   // 2. there is no Content-Type set on the file served.
