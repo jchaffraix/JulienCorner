@@ -2,16 +2,11 @@ package main
 
 import (
   "fmt"
-  "io"
   "io/ioutil"
   "log"
   "net/http"
   "os"
-  "strconv"
 
-  "github.com/gomarkdown/markdown"
-  "github.com/gomarkdown/markdown/ast"
-  "github.com/gomarkdown/markdown/html"
   "github.com/julienschmidt/httprouter"
 )
 
@@ -25,24 +20,6 @@ func renderFailedPage(w http.ResponseWriter) {
 <meta charset="UTF-8">
 <p>Something failed on our end!</p>`,
   http.StatusInternalServerError)
-}
-
-func customizeCSS(w io.Writer, node ast.Node, entering bool) (ast.WalkStatus, bool) {
-  if _, ok := node.(*ast.Heading); ok {
-    level := strconv.Itoa(node.(*ast.Heading).Level)
-
-    if entering && level == "1" {
-      w.Write([]byte(`<h1 class="title is-1 has-text-centered">`))
-    } else if entering {
-      w.Write([]byte("<h" + level + ">"))
-    } else {
-      w.Write([]byte("</h" + level + ">"))
-    }
-
-    return ast.GoToNext, true
-  }
-
-  return ast.GoToNext, false
 }
 
 func renderPageHTML(w http.ResponseWriter, content string) {
@@ -69,22 +46,6 @@ func renderPageHTML(w http.ResponseWriter, content string) {
 </html>`
   w.Header().Add("Content-Type", "text/html")
   w.Write([]byte(output))
-}
-
-func renderMarkdown(w http.ResponseWriter, path string) {
-  md, err := ioutil.ReadFile(path)
-  if err != nil {
-    log.Printf("Error reading file %s: %+v", path, err)
-    renderFailedPage(w)
-    return
-  }
-
-  opts := html.RendererOptions{
-    Flags: html.FlagsNone,
-    RenderNodeHook: customizeCSS,
-  }
-  renderer := html.NewRenderer(opts)
-  renderPageHTML(w, string(markdown.ToHTML(md, nil, renderer)))
 }
 
 func mainPageHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Params) {
