@@ -11,7 +11,7 @@ RUN adduser -S -D -H builder
 RUN git clone https://github.com/Gottox/smu.git smu
 RUN cd smu && make && make install && cd ..
 
-COPY --chown=builder:builder . /src
+COPY --chown=builder . /src
 
 USER builder
 
