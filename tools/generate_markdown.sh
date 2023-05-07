@@ -14,12 +14,12 @@ IFS="	"
 build_tsv_index() {
   for f in "$1"/*.md; do
     local title=$(head -n 1 "$f"|sed -e 's/^# //')
-    local commit_dates=$(git log --format="%cs" "$f")
+    local commit_dates=$(git log --follow --format="%cs" "$f")
     local created_time="draft"
     local updated_time="draft"
     if [ -n "$commit_dates" ]; then
-      created_time=$(echo "$commit_dates" | head -n 1)
-      updated_time=$(echo "$commit_dates" | tail -n 1)
+      created_time=$(echo "$commit_dates" | tail -n 1)
+      updated_time=$(echo "$commit_dates" | head -n 1)
     fi
     printf "%s\t%s\t%s\t%s\n" "$f" "$title" "$created_time" "$updated_time"
   done
@@ -46,7 +46,13 @@ build_html() {
     echo "Output file: $output_path"
 
 		cat header.html | sed "s/{{TITLE}}/$title/" > "$output_path"
-    $MARKDOWN "$f" >> "$output_path"
+    local content=$($MARKDOWN "$f")
+    echo "$content" | head -n 1 >> "$output_path"
+    printf "Created on %s<br>\n" "$create_time" >> "$output_path"
+    if [ "$create_time" != "$updated_time" ]; then
+      printf "Last modified on %s<br>\n" "$updated_time" >> "$output_path"
+    fi
+    echo "$content" | tail -n +2 >> "$output_path"
     cat footer.html >> "$output_path"
   done < "$1"
 }
