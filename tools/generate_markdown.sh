@@ -4,7 +4,7 @@
 set -eu
 
 MARKDOWN="smu"
-OUTPUT_DIR="build"
+OUTPUT_DIR="html"
 # We use an intermediate file as bash array sucks.
 POSTS_TMP_INDEX="/tmp/posts_index.tsv"
 PAGES_TMP_INDEX="/tmp/pages_index.tsv"
@@ -39,12 +39,11 @@ build_homepage() {
 build_html() {
   local output_dir="$2"
   while read -r f title create_time updated_time; do
-    echo "Processing file: $f"
     # The first line is the title of the post
     local html_file=$(echo "$f" | sed -e 's/.md$/.html/')
     local output_path="$output_dir/$html_file"
-    echo "Output file: $output_path"
 
+    echo "Processing file: $f -> $output_path"
 		cat header.html | sed "s/{{TITLE}}/$title/" > "$output_path"
     local content=$($MARKDOWN "$f")
     echo "$content" | head -n 1 >> "$output_path"
@@ -63,11 +62,9 @@ build_tsv_index "posts" | sort -rt "	" -k 3 > $POSTS_TMP_INDEX
 build_tsv_index "pages" > $PAGES_TMP_INDEX
 
 # Start from a clean state.
-rm -rf "$OUTPUT_DIR"
+rm -rf "$OUTPUT_DIR/posts" "$OUTPUT_DIR/pages" "$OUTPUT_DIR/index.html"
 mkdir -p "$OUTPUT_DIR/posts"
 mkdir -p "$OUTPUT_DIR/pages"
-# Copy anything under html.
-cp -R html/* "$OUTPUT_DIR"
 
 # Build the index.html then individual pages.
 echo "Building homepage"

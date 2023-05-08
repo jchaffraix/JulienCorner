@@ -2,8 +2,5 @@
 main.exe
 main
 
-# Ignore the build directory.
-build/
-
 # Explicitly ignore some files for testing
 ignoreme/
