@@ -13,21 +13,11 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
-  letter-spacing: 0.05em;
-  line-height: 1.2;
-  border-bottom: 1px solid #d0d7de;
+  border-top: 1px solid black;
 }
 
-h2 {
-  font-size: 1.8rem;
-  line-height: 1.1;
-  border-bottom: 1px solid #d0d7de;
-}
-
-h3 {
-  font-size: 1.5rem;
-  line-height: 1.1;
+h1:first-child {
+  border-top: inherit !important;
 }
 
 section {

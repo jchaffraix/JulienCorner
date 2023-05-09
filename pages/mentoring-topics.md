@@ -142,8 +142,6 @@ Types of visas...
 * Green card lottery
 Challenges of moving to the US (work culture, …)
 
-
-
 ## &#x1F3E1; Resources <a name="resources"></a>
 
 #### Code Katas
