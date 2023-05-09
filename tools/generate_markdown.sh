@@ -27,7 +27,7 @@ build_tsv_index() {
 
 build_homepage() {
   local output_path="$2/index.html"
-  cat header.html | sed "s/{{TITLE}}/Homepage/" > "$output_path"
+  cat header.html | sed "s#{{TITLE}}#Homepage#" > "$output_path"
   $MARKDOWN "index.md" >> "$output_path"
   while read -r f title create_time updated_time; do
     local relative_path=$(echo "$f" | sed -e 's/.md$/.html/')
@@ -44,7 +44,7 @@ build_html() {
     local output_path="$output_dir/$html_file"
 
     echo "Processing file: $f -> $output_path"
-		cat header.html | sed "s/{{TITLE}}/$title/" > "$output_path"
+		cat header.html | sed "s#{{TITLE}}#$title#" > "$output_path"
     local content=$($MARKDOWN "$f")
     echo "$content" | head -n 1 >> "$output_path"
     printf "Created on %s<br>\n" "$create_time" >> "$output_path"
