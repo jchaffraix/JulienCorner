@@ -6,13 +6,25 @@
 
 I strongly recommend visiting the [Alcatraz Island](https://www.nps.gov/alca/index.htm). They did a good job making it engaging. Plus there is a great view of San Francisco downtown. You can only get to the island by a ferry so the tickets tend to book fast. I recommend **booking at least 3-4 weeks before visiting**. Reserve about at least a half-day for this.
 
-In San Francisco, those are the points I would recommend checking:
+In San Francisco downtown, those are the points I would recommend checking:
 - Chinatown's Dragon Gate (@ 413-401 Grant Ave). You can also visit Chinatown while at it (and get some good Chinese food too).
 - Take the [cable cart](https://www.sfmta.com/getting-around/muni/cable-cars) from the Market stop to the Fisherman's Wharf stop. Those are pretty unique to San Francisco and give you a good experience of the hilly city. I recommend standing on the side of the cart so you get a full experience. Expect 30-60 mins wait before boarding as those are popular.
 - The painted ladies (@ Alamo Square) are some well-preserved Victorian houses (and a picture's favorite).
 - Lombard Street (enter through 1099 Lombard Street) is a great to drive through. It is a uniquely crooked street that oversees the bay. Make sure to stop after and walk it.
 - The Mission District (see below).
 - The Castro. This is the gay district in San Francisco and has a very special atmosphere.
+
+### Golden Gate
+
+The Golden Gate Bridge is also an iconic San Francisco monument and is definitely a must.
+
+It is a bit off center compared to the downtown area so you will need some mode of transportation to get there (public transport is not great in that area).
+
+You can also walk/bike the length of the bridge (but I have never done it so no tips on this).
+
+If you take a car across the bridge, you have a good vista point right after the Golden Gate on the right: there you can get good pictures of the bridge and the city. You can continue from there the quaint town of Sausalito (about 10-15 mins drive from the vista point). The town is a bit touristy but it's a good place for some souvenir and some food/drinks close to the water. The city consists mainly of a single street with most of the shops along it. If you're willing to go uphill, there are some free parking.
+
+Note: The bridge is free going North but you have a toll going South.
 
 ### Mission District
 
@@ -41,15 +53,15 @@ I like walking around the city as you get to experience it more closely. Beware 
 
 ## Downtown SF
 
-A good loop is to drop the car on the Embarcadero.
-Walk to the Ferry Building and check out the inside.
-Walk to Union Square by following Market St.
-Walk to Chinatown's Dragon Gate and get lost in Chinatown.
-Get back to Market to take the Cable Cart all the way to Fisherman's Wharf.
-Visit Fisherman's Wharf (there are some harbor seals most of the years, behind the buildings east of the pier)
-Walk the Embarcadero south.
+A good loop is to drop the car on the Embarcadero.<br>
+Walk to the Ferry Building and check out the inside.<br>
+Walk to Union Square by following Market St.<br>
+Walk to Chinatown's Dragon Gate and get lost in Chinatown.<br>
+Get back to Market to take the Cable Cart all the way to Fisherman's Wharf.<br>
+Visit Fisherman's Wharf (there are some harbor seals most of the years, behind the buildings east of the pier)<br>
+Walk the Embarcadero south to your car.
 
-You can optionally stop by Levi's Plaza to see the headquarters of Levi, which includes a store too. I recommend continuing past Levi's Plaza to take Filbert's steps (@ 202 Filbert St): those are city gardens' along steps that will get you all the way to Coit Tower. I don't recommend Coit Tower but the view there is nice.
+You can optionally stop by Levi's Plaza when walking south on the Embarcadero. Levi's Plaza hosts the headquarters of Levi, which also include a store. I recommend continuing past Levi's Plaza to take Filbert's steps (@ 202 Filbert St): those are city gardens' along the stairs that will get you all the way to Coit Tower. I don't recommend Coit Tower (it's expensive and not really worth it) but the view there is nice and free.
 
 # Drinking
 
