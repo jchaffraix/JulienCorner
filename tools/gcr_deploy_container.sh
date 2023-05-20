@@ -4,10 +4,11 @@ set -xeu -o pipefail
 export REGION="us-east1"
 export PROJECT="juliencorner"
 export SERVICE_NAME="$PROJECT"
-export REPOSITORY="us.gcr.io"
+export REPOSITORY="us-east1-docker.pkg.dev"
+export ARTIFACTORY_REPO="docker"
 export IMAGE_NAME="webapp"
 export TAG=$(date +%Y%m%d-%H%M%S)
-export LABEL="${REPOSITORY}/${PROJECT}/${IMAGE_NAME}:${TAG}"
+export LABEL="${REPOSITORY}/${PROJECT}/${ARTIFACTORY_REPO}/${IMAGE_NAME}:${TAG}"
 
 # Check that we pass an authorization for a service account and log into it.
 # Else for CLI invokation, we just use any existing credentials.
