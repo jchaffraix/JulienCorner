@@ -11,11 +11,11 @@ Table of Content:
 
 ### Getting started as a new engineer
 
-* Imposter syndrome
+* Impostor syndrome
 * Execution (keeping yourself on track)
 * Essential skills: touch typing, understanding your tools/language, practicing (code Katas)
 * Learning and effective Learning (learning plan)
-* Finding your working style (morning vs night, communication style, working style (in office, in cafe, at home, quiet vs loud, …)
+* Finding your working style (morning vs night, communication style, working style (in office, in café, at home, quiet vs loud, …)
 * Code katas or the importance of deliberate practice
 
 ### Career
@@ -109,7 +109,7 @@ How to make meetings effective
 
 2 stereotypes of people:
 * Separators, who have a strong boundary between work and life.
-* Integrators, who integrate work and life. Ex: people checking work email at 2am.
+* Integrators, who integrate work and life. Ex: people checking work email at 2 a.m.
 
 Any hours worked above 40h decreases your productivity
 
