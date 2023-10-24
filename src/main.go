@@ -16,10 +16,10 @@ func logRequest(req *http.Request) {
 
 func renderFailedPage(w http.ResponseWriter) {
   w.Header().Add("Content-Type", "text/html")
-  http.Error(w, `<!DOCTYPE html>
+  w.WriteHeader(http.StatusInternalServerError)
+  w.Write([]byte(`<!DOCTYPE html>
 <meta charset="UTF-8">
-<p>Something failed on our end!</p>`,
-  http.StatusInternalServerError)
+<p>Something failed on our end!</p>`))
 }
 
 func renderPageHTML(w http.ResponseWriter, content string) {
