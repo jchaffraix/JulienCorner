@@ -58,7 +58,7 @@ func mainPageHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Par
 
   main_page, err := ioutil.ReadFile("html/index.html")
   if err != nil {
-    log.Printf("Error reading main license %+v", err)
+    log.Printf("Error reading homepage %+v", err)
     renderFailedPage(w)
     return
 
