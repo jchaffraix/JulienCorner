@@ -87,6 +87,10 @@ I have not read this book but it is high on my list. I highly recommend the [Tal
 
 A very solid introduction into DevOps. It is a bit hard to read but it opens my eyes on the power of agile applied to ops.
 
+**Rework**
+
+A light book on building a software start-up without external capital by focusing on the essentials, from the founders of 37signals.
+
 ## Misc
 
 **How to read a book**
