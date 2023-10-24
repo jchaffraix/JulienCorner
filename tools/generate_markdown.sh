@@ -31,7 +31,7 @@ build_homepage() {
   $MARKDOWN "index.md" >> "$output_path"
   while read -r f title create_time updated_time; do
     local relative_path=$(echo "$f" | sed -e 's/.md$/.html/')
-    printf "%s&nbsp;<a href=\"/%s\">%s</a>\n" "$create_time" "$relative_path" "$title" >> "$output_path"
+    printf "%s&nbsp;<a href=\"/%s\">%s</a><br/>\n" "$create_time" "$relative_path" "$title" >> "$output_path"
   done < "$1"
   cat footer.html >> "$output_path"
 }
