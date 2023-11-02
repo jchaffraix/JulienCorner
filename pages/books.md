@@ -6,6 +6,7 @@ I have expanded it a bit to include a few blogs/videos when it made sense.
 
 Note: This is a highly personal list. The books listed are a good start on a particular topic... but when it comes to reading, **reading wide** is more important than sticking to classics.
 
+<hr />
 
 ## Financial independence
 
@@ -23,11 +24,12 @@ This is one of the cornerstone book in the FIRE movement. A book about applying 
 
 Highly recommend reading the following articles:
 
-** [Getting Rich: from Zero to Hero in One Blog Post](https://www.mrmoneymustache.com/2013/02/22/getting-rich-from-zero-to-hero-in-one-blog-post/)
-** [The Shockingly Simple Math Behind Early Retirement](https://www.mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement/)
+* [Getting Rich: from Zero to Hero in One Blog Post](https://www.mrmoneymustache.com/2013/02/22/getting-rich-from-zero-to-hero-in-one-blog-post/)
+* [The Shockingly Simple Math Behind Early Retirement](https://www.mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement/)
 
+<hr />
 
-# Investing
+## Investing
 
 **Rich dad/poor dad**
 
@@ -36,6 +38,8 @@ Very inspirational book that launched many investors. The story is probably fake
 **What Every Real Estate Investor Needs to Know About Cash Flow... And 36 Other Key Financial Measures**
 
 A solid introduction book about all the metrics useful for investing in real estate, with some explanations about their limitations and examples to understand the concepts. While framed as a real estate book, the metrics do apply to other investment too (e.g. business).
+
+<hr />
 
 ## Productivity
 
@@ -61,6 +65,8 @@ A great book on habits (forming, breaking). Fairly short and to the point.
 
 Note: Some folks really like **The power of habits** that looks into habits too but didn't really do anything for me (but may help you!).
 
+<hr />
+
 ## Simplifying
 
 Note: I struggle with simplifying in general, which is why it has its own category.
@@ -77,6 +83,8 @@ Another book on simplifying, using the question: "What is the one thing I can do
 
 Very practical book on decluttering if you can get past some of the author's idiosyncracies, like thanking her stuff before discarding them.
 
+<hr />
+
 ## Software engineering
 
 **The Effective Engineer: How to Leverage Your Efforts In Software Engineering to Make a Disproportionate and Meaningful Impact**
@@ -90,6 +98,8 @@ A very solid introduction into DevOps. It is a bit hard to read but it opens my 
 **Rework**
 
 A light book on building a software start-up without external capital by focusing on the essentials, from the founders of 37signals.
+
+<hr />
 
 ## Misc
 
