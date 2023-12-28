@@ -41,6 +41,7 @@ A solid introduction book about all the metrics useful for investing in real est
 
 <hr />
 
+<a id="productivity"></a>
 ## Productivity
 
 **Pragmatic Thinking and Learning: Refactor Your Wetware**
