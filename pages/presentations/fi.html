@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/presentations/reveal_js/reveal.css">
+    <link rel="stylesheet" href="/presentations/reveal_js/theme/night.css">
+    <style>
+      .cashflow {
+        color: #ff9933;
+      }
+      .expenses {
+        color: #6600cc;
+      }
+      .danger {
+        color: #e60000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>Journey to FI</h1>
+          Last update: March 2024
+        </section>
+
+        <section>
+          <b>I am not a financial advisor, a lawyer, an accountant or your mom</b>
+        </section>
+        <aside class="notes">
+            Disclaimer as we are going to talk about money<br/>
+            I do not know your personal situation.
+          </aside>
+        <section>
+          Please take the time to <span class="danger">teach yourself</span>
+        <aside class="notes">
+            You can easily lose money when investing. In fact, there is a large swath of the financial sector that profits from people making mistakes.<br/>
+            The worst you can do is act recklessly and lose money (looking at you, HODL gang).
+          </aside>
+        </section>
+        <section>
+          This talk = 1 data point
+          <aside class="notes">
+            Your journey to FI should represent your aspirations. Some of what I will say won’t resonate and that’s OK, find something that works for you!
+          </aside>
+        </section>
+        <section>
+          Let's talk about Financial independence
+        </section>
+        <section>
+          When the <span class="cashflow">cash flow</span> from your investments exceeds your <span class="expenses">expenses</span>
+          <aside class="notes"></aside>
+        </section>
+        <section>
+          <img src="/presentations/images/cashflow_vs_expenses.png"/>
+          <aside class="notes">
+          This diagram is (obviously) highly simplified but outlines the basic math of FI. This is pretty powerful as you know the 2 levers to manipulate to get to it.<br/>
+          Also once you’re on a path, you can compute it.
+          </aside>
+        </section>
+        <section>
+          The 2 levers of FI:
+          <ul>
+            <li>Increase <span class="cashflow">cash flow</span><br/></li>
+            <li>Decrease <span class="expenses">expenses</span></li>
+          </ul>
+          <aside class="notes">
+          <ul>
+            <li>Increase cash flow: increase how much you stash (saving rate, see below) or the quality of your investment (returns)</li>
+            <li>Decrease your expenses</li>
+          </ul>
+          </aside>
+        </section>
+        <section>
+          Increase <span class="cashflow">cash flow</span><br/>
+          <h1>Decrease <span class="expenses">expenses</span><h1>
+          <aside class="notes">It turns out that they are not equal!</aside>
+        </section>
+        <section>
+          $1 <span class="expense">expense</span> = $25 of capital for <span class="cashflow">cash flow</span>
+          <aside class="notes">
+            Using the 4% rule.<br/>
+            If you get better returns, the amount of capital will be lower. However I don’t know of any investments returning 100% per year forever so the multiplier is always > 1x.
+          </aside>
+        </section>
+        <section>
+          $1 of capital for <span class="cashflow">cash flow</span> = $1.5 - $2 in income
+          <aside class="notes">
+            That’s to account for taxes.<br/>
+            For high-income earners (which I hope is most folks reading this), it’s closer to $2. $2 is a good rule of thumb.
+          </aside>
+        </section>
+        <section>
+          $1 <span class="expenses">expense</span> = $38 - $50 in income
+          <aside class="notes">This is the capital T Truth about expenses. The returns are pretty low with a diversified portfolio so your expenses do matter.</aside>
+        </section>
+        <section>
+          \[\begin{aligned}
+          saving\_rate &amp; = \frac{income - expenses}{income}
+          \end{aligned} \]
+          <aside class="notes">
+            Very powerful concept: the saving rate is how much you’re stashing away.<br/>
+            The closer you get to 100% the faster you will reach FI (exponentially so).
+          </aside>
+        </section>
+        <section>
+          <table>
+            <thead>
+              <tr>
+                <th>Saving rate (%)</th>
+                <th>Years to FI</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>10</td>
+                <td>51</td>
+              </tr>
+              <tr>
+                <td>50</td>
+                <td>17</td>
+              </tr>
+              <tr>
+                <td>70</td>
+                <td>8.5</td>
+              </tr>
+              <tr>
+                <td>80</td>
+                <td>5.5</td>
+              </tr>
+            <th>
+            </th>
+            </tbody>
+          </table>
+          Adopted from <a href="https://www.mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement/">Mister Money Moustache</a>
+          <aside class="notes">
+            Note that the relationship is not linear. The closer you get to 100% the faster it goes.<br/>
+            That's the power of a high saving rate!
+          </aside>
+        </section>
+        <!-- TODO: Talk about investments (different types with different commitments), my "numbers" using year of expenses, ERE -->
+        <section>
+          <aside class="notes"></aside>
+        </section>
+        <section>
+          <aside class="notes"></aside>
+        </section>
+        <section>
+          <aside class="notes"></aside>
+        </section>
+        <section>
+          <h2>Resources:</h2>
+          <ul>
+            <li><a href="https://yourmoneyoryourlife.com/book-summary/">Your money or your life</a></li>
+            <li><a href="https://www.mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement/">Mister Money Moustache (The shockingly simple math behind early retirement)</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <script src="/presentations/reveal_js/plugin/notes/notes.js"></script>
+    <script src="/presentations/reveal_js/plugin/math/math.js"></script>
+    <script src="/presentations/reveal_js/reveal.js"></script>
+    <script>
+      Reveal.initialize(
+        {
+          plugins: [ RevealMath.KaTeX, RevealNotes ],
+          katex: {
+            version: 'latest',
+            delimiters: [ {left: '\\[', right: '\\]', display: true} ],
+          },
+        },
+        );
+    </script>
+  </body>
+</html>

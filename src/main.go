@@ -117,6 +117,7 @@ func main() {
   router.GET("/licenses", licensesHandler)
   router.ServeFiles("/posts/*filepath", http.Dir("html/posts"))
   router.ServeFiles("/pages/*filepath", http.Dir("html/pages"))
+  router.ServeFiles("/presentations/*filepath", http.Dir("html/presentations"))
   // Note: Some limitations of ServeFile are:
   // 1. that if there is no 'index.html' in the directory, this will show the directory.
   // 2. there is no Content-Type set on the file served.
