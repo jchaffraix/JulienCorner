@@ -6,8 +6,9 @@ main.exe
 main
 
 # Ignore the generated HTML directory.
-html/posts
 html/pages
+html/posts
+html/presentations
 html/index.html
 
 # Explicitly ignore some files for testing
