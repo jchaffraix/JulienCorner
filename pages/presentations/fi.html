@@ -13,6 +13,13 @@
       .danger {
         color: #e60000;
       }
+      .strikethrough {
+        text-decoration: line-through;
+      }
+      .borderImportant {
+        border: 1rem solid #6600cc;
+        padding: .2rem;
+      }
     </style>
   </head>
   <body>
@@ -24,40 +31,60 @@
         </section>
 
         <section>
-          <b>I am not a financial advisor, a lawyer, an accountant or your mom</b>
-        </section>
-        <aside class="notes">
+          <b>I am not a financial advisor, a lawyer, an accountant or your parents</b>
+          <aside class="notes">
             Disclaimer as we are going to talk about money<br/>
             I do not know your personal situation.
           </aside>
+        </section>
         <section>
-          Please take the time to <span class="danger">teach yourself</span>
+          Taking the time to <span class="danger">learn</span> is well worth it
         <aside class="notes">
-            You can easily lose money when investing. In fact, there is a large swath of the financial sector that profits from people making mistakes.<br/>
+            You can easily lose money when investing. In fact, there are industries that benefits from your mistakes (finance with high-load funds, grifters with NFTs, scammers, ...).<br/>
             The worst you can do is act recklessly and lose money (looking at you, HODL gang).
           </aside>
         </section>
         <section>
           This talk = 1 data point
           <aside class="notes">
-            Your journey to FI should represent your aspirations. Some of what I will say won’t resonate and that’s OK, find something that works for you!
+            This is my personal journey.
           </aside>
         </section>
         <section>
-          Let's talk about Financial independence
+          <span class="strikethrough">Retire Early</span>
+          <aside class="notes">
+            I do not intent to retire and expect to pick up paid work down the road<br/>
+            I will explain more on that towards the end but that's a big distinction with other FIRE folks
+          </aside>
+        </section>
+        <section>
+          Your journey will be <span class="cashflow">different</span>
+          <aside class="notes">
+            Your journey to FI should represent your aspirations. Some of what I will say won’t resonate and that’s OK, find something that works for you!
+          </aside>
+        </section>
+
+        <section>
+          Let's talk about Financial Independence
         </section>
         <section>
           When the <span class="cashflow">cash flow</span> from your investments exceeds your <span class="expenses">expenses</span>
-          <aside class="notes"></aside>
+          <aside class="notes">Definition from your money or your life.<br/>In this classic, they actually recommend drawing your cash flow/expenses on paper!</aside>
         </section>
         <section>
           <img src="/presentations/images/cashflow_vs_expenses.png"/>
           <aside class="notes">
           This diagram is (obviously) highly simplified but outlines the basic math of FI. This is pretty powerful as you know the 2 levers to manipulate to get to it.<br/>
-          Also once you’re on a path, you can compute it.
+          Also once you’re on a path, you can compute it and I will show you my tracking system later.
           </aside>
         </section>
         <section>
+          <img src="/presentations/images/cashflow_vs_expenses_complex.png"/>
+          <aside class="notes">
+            More realistic diagram with some upper/lower bound of cashflow.<br/>
+          </aside>
+        </section>
+         <section>
           The 2 levers of FI:
           <ul>
             <li>Increase <span class="cashflow">cash flow</span><br/></li>
@@ -71,28 +98,79 @@
           </aside>
         </section>
         <section>
-          Increase <span class="cashflow">cash flow</span><br/>
-          <h1>Decrease <span class="expenses">expenses</span><h1>
+          <ul>
+            <li>Increase <span class="cashflow">cash flow</span></li>
+            <li><h2>Decrease <span class="expenses">expenses</span></h2></li>
+          </ul>
           <aside class="notes">It turns out that they are not equal!</aside>
         </section>
         <section>
-          $1 <span class="expense">expense</span> = $25 of capital for <span class="cashflow">cash flow</span>
+          Let's dive into some Math to explain why this is so!
+          <aside class="notes">This should be fairly simple math</aside>
+        </section>
+        <section>
+          Who has heard about the 4% rule?
           <aside class="notes">
-            Using the 4% rule.<br/>
-            If you get better returns, the amount of capital will be lower. However I don’t know of any investments returning 100% per year forever so the multiplier is always > 1x.
+            Ask someone to explain<br/>
+            Can take about 4% of the portfolio each year to last for the duration (adjusted for inflation).
           </aside>
         </section>
         <section>
-          $1 of capital for <span class="cashflow">cash flow</span> = $1.5 - $2 in income
+          <span class="cashflow">Safe Withdrawal Rate (SWR)</span>
+          <aside class="notes">
+            Hard question: stocks have highly variable returns<br/>
+            Hard to know how much to take each year<br/>
+            Study based on 20 years' periods<br/>
+          </aside>
+        </section>
+        <section>
+          Rule of thumb for <span class="cashflow">index fund</span>
+          <aside class="notes">
+            Stocks have highly variable returns<br/>
+            Lots of arguments for/against it (20 years assumptions, flexibility how much to get, risks depending on the time periods, ...)<br/>
+          </aside>
+        </section>
+        <section>
+          Limited but <b>useful</b>
+          <aside class="notes">
+          </aside>
+        </section>
+        <section>
+          <span class="cashflow">Index funds</span> is only one asset class
+          <aside class="notes">
+            index funds are easy and provide reasonable return<br/>
+            But they are volative (sequence of risks) and not the highest return (more active investments like real-estate, businesses can compound at 20%).
+          </aside>
+        </section>
+        <section>
+          <span class="cashflow">Better returns</span> means less capital needed
+          <aside class="notes">
+            This just changes the ratio of income to capital needed, not the math<br/>
+            However I don’t know of any investments returning 100% per year forever so the multiplier is always > 1x. For 10% returns, it's still 10x
+          </aside>
+        </section>
+        <section>
+          $1 <span class="expenses">expense</span> &Equilibrium; $25 of capital invested for <span class="cashflow">cash flow</span>
+          <aside class="notes">
+            This is the 4% rule, translated in $$
+          </aside>
+        </section>
+        <section>
+          $1 of capital invested for <span class="cashflow">cash flow</span> &Equilibrium; $1.5 - $2 in income
           <aside class="notes">
             That’s to account for taxes.<br/>
-            For high-income earners (which I hope is most folks reading this), it’s closer to $2. $2 is a good rule of thumb.
+            For high-income earners, this is closer to $2. $2 is a good rule of thumb.
           </aside>
         </section>
         <section>
-          $1 <span class="expenses">expense</span> = $38 - $50 in income
+          $1 <span class="expenses">expense</span> &Equilibrium; $37.5 - $50 in income
           <aside class="notes">This is the capital T Truth about expenses. The returns are pretty low with a diversified portfolio so your expenses do matter.</aside>
         </section>
+        <section>
+          <span class="borderImportant">$1 <span class="expenses">expense</span> &Equilibrium; $37.5 - $50 in income</span>
+          <aside class="notes">This is the capital T Truth about expenses. The returns are pretty low with a diversified portfolio so your expenses do matter.</aside>
+        </section>
+
         <section>
           \[\begin{aligned}
           saving\_rate &amp; = \frac{income - expenses}{income}
@@ -127,8 +205,6 @@
                 <td>80</td>
                 <td>5.5</td>
               </tr>
-            <th>
-            </th>
             </tbody>
           </table>
           Adopted from <a href="https://www.mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement/">Mister Money Moustache</a>
@@ -137,21 +213,124 @@
             That's the power of a high saving rate!
           </aside>
         </section>
-        <!-- TODO: Talk about investments (different types with different commitments), my "numbers" using year of expenses, ERE -->
         <section>
+          What can you do <span class="expenses">without</span>?
+          <aside class="notes">That the hard question underlying it all</aside>
+        </section>
+        <section>
+          <span class="expenses">Frugality</span>
+          <aside class="notes">This is lean FIRE</aside>
+        </section>
+
+        <!-- TODO: Sequence of return risk -->
+        <!-- TODO: Scrub my spreadsheet and share it -->
+        <section>
+          Let's talk about my journey!
+        </section>
+        <section>
+          Financial Independence<span class="danger strikethrough">, Retire Early</span>
+          <aside class="notes">I don't like the Retire Early part of the FIRE movement.</aside>
+        </section>
+        <section>
+          Retiring is sold as a goal
+          <aside class="notes">Offering time on a beach is very attractive</aside>
+        </section>
+        <section>
+          ... but it can be really bad for you&trade;
+          <aside class="notes">Stopping any activity can lead to a lot of nefarious effects:
+            <ul>
+              <li>loneliness</li>
+              <li>early aging</li>
+            </ul>
+          </aside>
+        </section>
+        <section>
+          Let's look at my numbers
+          <aside class="notes">
+          </aside>
+        </section>
+        <section>
+          I used <span class="expenses">years of expenses</span> rather than $$
+          <aside class="notes">
+            $$ would distract from the actual point. You should think in terms of years of expenses saved.
+          </aside>
+        </section>
+        <section>
+          My numbers:
+          <table>
+            <thead>
+              <tr>
+                <th>Bucket</th>
+                <th>Investment</th>
+                <th>Amount (in years of expenses)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td rowspan="2">Post-tax</td>
+                <td>Mutual funds/ETFs</td/>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Money market</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td rowspan="2">Real Estate</td>
+                <td>Apartment/SFH</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Loans</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Pre-tax</td>
+                <td>401k, HSA</td>
+                <td>10</td>
+              </tr>
+            </tbody>
+          </table>
+          <aside class="notes">I have 3 main buckets of investments: the most important one is the post-tax investments (liquid), real estate is 3 properties + some $$ lended to the business, pre-tax is locked until 65 years old so will kick in when I get older</aside>
+        </section>
+        <section>
+          Mutual funds/ETFs = simplified <span class="cashflow">three-funds portfolio</span>
+          <aside class="notes"></aside>
+        </section>
+        <section>
+          50% total US stock market / 50% total international stock market
+          <aside class="notes"></aside>
+        </section>
+        <section>
+          Total US stock market: VTIAX / ESGV
+          <aside class="notes"></aside>
+        </section>
+        <section>
+          Total International stock market: VTAIX / VSGX
           <aside class="notes"></aside>
         </section>
         <section>
           <aside class="notes"></aside>
         </section>
+
         <section>
+          Quick summary
           <aside class="notes"></aside>
+        </section>
+        <section>
+          What is <span class="danger">YOUR plan</span>?<br/>
+          What can you do <span class="expenses">without</span>?
+          <aside class="notes">To wrap it up, I showed you my plan and how it went. It doesn't matter what I did, what matters is what you want to do.</aside>
+        </section>
+        <section>
+          Q &amp; A
         </section>
         <section>
           <h2>Resources:</h2>
           <ul>
             <li><a href="https://yourmoneyoryourlife.com/book-summary/">Your money or your life</a></li>
             <li><a href="https://www.mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement/">Mister Money Moustache (The shockingly simple math behind early retirement)</a></li>
+            <li><a href="https://www.bogleheads.org/wiki/Three-fund_portfolio">Three-fund portfolio</a></li>
           </ul>
         </section>
       </div>
