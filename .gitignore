@@ -11,5 +11,8 @@ html/posts
 html/presentations
 html/index.html
 
+# This is downloaded during the build.
+reveal_js.zip
+
 # Explicitly ignore some files for testing
 ignoreme/
