@@ -2,7 +2,7 @@
 
 <hr />
 
-## Financial independence
+## <a name="fi"></a>Financial independence
 
 **Radical Personal Finance** [website](https://radicalpersonalfinance.libsyn.com/)
 

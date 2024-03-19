@@ -8,11 +8,13 @@ Note: This is a highly personal list. The books listed are a good start on a par
 
 <hr />
 
-## Financial independence
+## <a name="fi"></a>Financial independence
 
 **Your money or your life: 9 Steps to Transforming Your Relationship with Money and Achieving Financial Independence** [website](https://yourmoneyoryourlife.com/book/)
 
 This is an old classic from before we had the Financial Independence Retire Early (FIRE) movement. The investments are outdated but the plan and psychology parts are still solid.
+
+<a href="https://yourmoneyoryourlife.com/book-summary/">Book summary</a>
 
 **Early Retirement Extreme** [website](https://earlyretirementextreme.com/)
 
