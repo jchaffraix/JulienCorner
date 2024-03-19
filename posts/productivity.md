@@ -6,7 +6,7 @@
 
 Productivity is a raw measure of output. In a factory, productivity would be the absolute number of widgets that is made in a day. In productivity systems, that would be the number of tasks tackled.
 
-Efficiency (or effectiveness) is the measure of productivity towards a goal. The distinction is important as anything done that is in service of a goal is effectively wasted.
+Efficiency (or effectiveness) is the measure of productivity towards a goal. The distinction is important as anything done that is not in service of a goal is effectively wasted.
 
 Someone can be very productive (gets a lot done) but very ineffective (does the wrong thing), conversely someone can be very effective but very unproductive (the low output is 100% placed towards a goal).
 
