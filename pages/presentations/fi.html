@@ -16,9 +16,8 @@
       .strikethrough {
         text-decoration: line-through;
       }
-      .borderImportant {
-        border: 1rem solid #6600cc;
-        padding: .2rem;
+      .giantText {
+        font-size: 3em;
       }
       .sales {
         display: inline-block;
@@ -34,7 +33,7 @@
     <div class="reveal">
       <div class="slides">
         <section>
-          <h1>Journey to FI</h1>
+          <h2>Journey to Financial Independence</h2>
           Last update: March 2024
         </section>
 
@@ -46,7 +45,7 @@
           </aside>
         </section>
         <section>
-          <b>Talk to your financial advisor, lawyer, accountant, spouse, dog, &hellip;</b>
+          <b>Talk to your financial advisor, lawyer, accountant, partner/spouse, dog, &hellip;</b>
           <aside class="notes">
             Disclaimer as we are going to talk about money<br/>
             I do not know your personal situation.
@@ -60,15 +59,9 @@
           </aside>
         </section>
         <section>
-          This talk is <span class="danger">1</span> data point
-          <aside class="notes">
-            This is my personal journey.<br/>
-            There is a lot of oddity in this plan (not retiring, ...)
-          </aside>
-        </section>
-        <section>
           Your journey will be <span class="cashflow">different</span>
           <aside class="notes">
+            This is my personal journey.<br/>
             Your journey to FI should represent your aspirations. Some of what I will say won’t resonate and that’s OK, find something that works for you!
           </aside>
         </section>
@@ -80,13 +73,12 @@
           </aside>
         </section>
 
-
         <section>
           Let's talk about Financial Independence
         </section>
         <section>
-          When the <span class="cashflow">cash flow</span> from your investments exceeds your <span class="expenses">expenses</span>
-          <aside class="notes">Definition from your money or your life.<br/>In this classic, they actually recommend drawing your cash flow/expenses on paper!</aside>
+          When the <span class="cashflow">returns</span> from your investments exceeds your <span class="expenses">expenses</span>
+          <aside class="notes">Definition from your money or your life.<br/>In this classic, they actually recommend drawing your returns/expenses on paper!</aside>
         </section>
         <section>
           <img src="/presentations/images/cashflow_vs_expenses.png"/>
@@ -104,26 +96,26 @@
          <section>
           The 2 levers of FI:
           <ul>
-            <li>Increase <span class="cashflow">cash flow</span><br/></li>
+            <li>Increase <span class="cashflow">returns</span><br/></li>
             <li>Decrease <span class="expenses">expenses</span></li>
           </ul>
           <aside class="notes">
           <ul>
-            <li>Increase cash flow: increase how much you stash (saving rate, see below) or the quality of your investment (returns)</li>
+            <li>Increase returns: increase how much you stash (saving rate, see below) or the quality of your investment (returns)</li>
             <li>Decrease your expenses</li>
           </ul>
           </aside>
         </section>
         <section>
           <ul>
-            <li>Increase <span class="cashflow">cash flow</span></li>
-            <li><h2>Decrease <span class="expenses">expenses</span></h2></li>
+            <li>Increase <span class="cashflow">returns</span></li>
+            <li class="giantText">Decrease <span class="expenses">expenses</span></li>
           </ul>
-          <aside class="notes">It turns out that they are not equal!</aside>
+          <aside class="notes">
+            Not discounting the returns part (that makes sense early in your career) but expenses has a larger multiplier</aside>
         </section>
         <section>
-          Let's dive into some Math to explain why this is so!
-          <aside class="notes">This should be fairly simple math</aside>
+          Let me explain why!
         </section>
         <section>
           Who has heard about the 4% rule?
@@ -161,39 +153,24 @@
         </section>
         <section>
           4% rule:<br/>
-          $1 <span class="expenses">expense</span> &Equilibrium; $25 of capital invested for <span class="cashflow">cash flow</span>
+          You need <b>25x</b> your <span class="expenses">expenses</span> in invested capital
           <aside class="notes">
-            This is the 4% rule, translated in $$
+            This is the capital T Truth about expenses. The returns are pretty low with a diversified portfolio so your expenses do matter.</aside>
+        </section>
+        <section>
+          &#x1F4C8; Higher multiplier due to <span class="expenses">taxes</span><br/>
+          &#x1F4C9; Lower multiplier with <span class="cashflow">better returns</span>
+          <aside class="notes">
+            Putting things in perspective
           </aside>
         </section>
         <section>
-          $1 of capital invested for <span class="cashflow">cash flow</span> &Equilibrium; $1.5 - $2 in income
-          <aside class="notes">
-            That’s to account for taxes.<br/>
-            For high-income earners, this is closer to $2. $2 is a good rule of thumb.
-          </aside>
-        </section>
-        <section>
-          $1 <span class="expenses">expense</span> &Equilibrium; $37.5 - $50 in income
-          <aside class="notes">This is the capital T Truth about expenses. The returns are pretty low with a diversified portfolio so your expenses do matter.</aside>
-        </section>
-        <section>
-          <span class="borderImportant">$1 <span class="expenses">expense</span> &Equilibrium; $37.5 - $50 in income</span>
-          <aside class="notes">This is the capital T Truth about expenses. The returns are pretty low with a diversified portfolio so your expenses do matter.</aside>
-        </section>
-        <section>
-          <span class="cashflow">Better returns</span> or less taxes means less capital needed
-        </section>
-        <section>
-          But the <b>large multiplier</b> remains
-          <aside class="notes">
-            This just changes the ratio of income to capital needed, not the math<br/>
-            However I don’t know of any investments returning 100% per year forever so the multiplier is always > 1x. For 10% returns, it's still 10x
-          </aside>
+          <span class="danger">Frugality</span>
+          <aside class="notes">This is lean FIRE</aside>
         </section>
 
         <section>
-          How do you build the <span class="cashflow">capital</span>?
+          How do you build the <b>capital</b>?
           <aside class="notes">
             We've talked about reducing expenses but you still need to build the capital<br/>
             Let's focus on this now.
@@ -204,8 +181,7 @@
           saving\_rate &amp; = \frac{income - expenses}{income}
           \end{aligned} \]
           <aside class="notes">
-            Very powerful concept: the saving rate is how much you’re stashing away.<br/>
-            The closer you get to 100% the faster you will reach FI (exponentially so).
+            Very powerful concept: the saving rate is how much you’re stashing away after taxes (aka take home pay).<br/>
           </aside>
         </section>
         <section>
@@ -258,23 +234,13 @@
                 <td>50</td>
                 <td>1</td>
               </tr>
-            </tbody>
-          </table>
-          <table>
-            <thead>
-              <tr>
-                <th>Saving rate (%)</th>
-                <th>How many years can you take after working 1 year?</th>
-              </tr>
-            </thead>
-            <tbody>
               <tr>
                 <td>75</td>
-                <td>3</td>
+                <td>1 / 3</td>
               </tr>
               <tr>
                 <td>80</td>
-                <td>4</td>
+                <td>1 / 4</td>
               </tr>
             </tbody>
           </table>
@@ -283,14 +249,6 @@
             Another way to look at the data<br/>
             High saving rates allow you to take large breaks between jobs
           </aside>
-        </section>
-        <section>
-          What can you do <span class="expenses">without</span>?
-          <aside class="notes">That the hard question underlying it all</aside>
-        </section>
-        <section>
-          <span class="expenses">Frugality</span>
-          <aside class="notes">This is lean FIRE</aside>
         </section>
 
         <section>
@@ -302,36 +260,24 @@
             The worst mistake is to invest badly
           </aside>
         </section>
-        <section>
+        <section id="good-starting-books">
           Good starting books:
           <ul>
             <li>The only investment guide you will ever need</li>
             <li>Simple Path to Wealth</li>
-            <li>Bogleheads' Guide To Investing</li>
           </ul>
           <aside class="notes">
             The only investment guide you will ever need: great starter book on investing in general.<br/>
             Simple Path to Wealth: written for people starting in life<br/>
-            Bogleheads' Guide to Investing: focused on diversifed index funds<br/>
           </aside>
         </section>
         <section>
           Borrow them from your local library &#x1F609;
         </section>
         <section>
-          Limit <span class="danger">debt</span>, especially high-interest
+          <a href="https://www.reddit.com/r/personalfinance/">Reddit r/personalfinance</a>
           <aside class="notes">
-            Debt is a drag on your cash flow. Also it is an incompressible expense<br/>
-            Debt can be good or bad, depending on how it is used (purchase investments vs purchase a depreciating asset like a car)<br/>
-            Personally, only have debt against investments
-          </aside>
-        </section>
-        <section>
-          Most folks use a portfolio of <span class="cashflow">diversified, low-cost index funds</span>
-          <aside class="notes">
-            Emphasis on diversified &amp; low cost: max ~0.1% total fees<br/>
-            Don't want to recommend one as it depends on your risk tolerance, goals, ...<br/>
-            I will give mine as an example later, but I will also criticize it.
+            Great starting resource
           </aside>
         </section>
         <section>
@@ -340,6 +286,19 @@
             Don't invest anything you need in the next 5-10 years<br/>
             At the beginning, you don't have enough money that it will hurt you<br/>
             Take the time to be comfortable with the process
+          </aside>
+        </section>
+        <section>
+          Measure &amp; Budget!
+          <aside class="notes">
+            Will share my tracking sheet
+          </aside>
+        </section>
+        <section>
+          Most folks use a portfolio of <span class="cashflow">diversified, low-cost index funds</span>
+          <aside class="notes">
+            Emphasis on diversified &amp; low cost: max ~0.1% total fees<br/>
+            Don't want to recommend one as it depends on your risk tolerance, goals, ...
           </aside>
         </section>
 
@@ -373,6 +332,7 @@
           ... but it can be really bad for you&trade;
           <aside class="notes">Stopping any activity can lead to a lot of nefarious effects:
             <ul>
+              <li>loss of community</li>
               <li>loneliness</li>
               <li>early aging</li>
             </ul>
@@ -401,7 +361,7 @@
             <tbody>
               <tr>
                 <td rowspan="4">Post-tax</td>
-                <td>Mutual funds/ETFs</td/>
+                <td>Low cost, diversified index funds</td/>
                 <td>20</td>
               </tr>
               <tr>
@@ -433,22 +393,23 @@
             </tbody>
           </table>
           <aside class="notes">
-            I have 3 main buckets of investments: the most important one is the post-tax investments (liquid), real estate is 3 properties + some $$ lended to the business, pre-tax is locked until 65 years old so will kick in when I get older<br/>
-            Calling out the large amount of cash (7y): about to start so want a buffer<br/></aside>
+            I have 3 main buckets of investments: the most important one is the post-tax investments (liquid), real estate and pre-tax (locked until 65 years old unless roth conversion)<br/>
+            Index-funds + cash &gt; 25x (FI goal)<br/>
+            Large amount of cash (7y): buffer to help with transitioning out of Slack<br/></aside>
         </section>
         <section>
-          Mutual funds/ETFs = simplified <span class="cashflow">three-funds portfolio</span>
+          Index funds = simplified <span class="cashflow">three-funds portfolio</span>
           <aside class="notes">
             The 3 fund portfolio is a simple portfolio that is a good starting point<br/>
           </aside>
         </section>
         <section>
             <a href="https://www.bogleheads.org/wiki/Three-fund_portfolio">Three-fund portfolio</a>:
-          <ul>
+          <ol>
             <li>total US stock market</li>
             <li>total international stock market</li>
             <li>total bond market</li>
-          </ul>
+          </ol>
           <aside class="notes">three-funds portfolio is a template (need to add the weight on all class depending on what you want to do)<br/>
             Provides a broad exposure to US/international</aside>
         </section>
@@ -462,26 +423,6 @@
           <aside class="notes">This is aggressive (100% in stock)</aside>
         </section>
         <section>
-          Total US stock market: VTSAX / ESGV
-          <aside class="notes">Ticker used if curious</aside>
-        </section>
-        <section>
-          Total international stock market: VTAIX / VSGX
-          <aside class="notes">Ticker used if curious</aside>
-        </section>
-        <section>
-          Not a perfect asset allocation:
-          <ul>
-            <li>Too much cash right now</li>
-            <li>Heavy in stocks</li>
-            <li>Heavy in international stocks</li>
-          </ul>
-          <aside class="notes">
-            Want to be clear that it's not perfect!<br/>
-            But this is fine by me...
-          </aside>
-        </section>
-        <section>
           <img src="/presentations/images/tracking_chart.png" class="r-stretch"/>
           <aside class="notes">
             Y-axis is $$ in asset<br/>
@@ -493,7 +434,7 @@
           </aside>
         </section>
         <section>
-          <a href="https://docs.google.com/spreadsheets/d/1z-zslX5lz2LL9NoOGY69mlHqswBMK8ZAfnXQDI63-bA/edit">Tracking sheet</a>
+          <a href="https://docs.google.com/spreadsheets/d/1z-zslX5lz2LL9NoOGY69mlHqswBMK8ZAfnXQDI63-bA/edit">My tracking sheet</a>
           <aside class="notes"></aside>
         </section>
 
@@ -511,24 +452,36 @@
 
         <section>
           Parting thoughts
-          <aside class="notes"></aside>
         </section>
         <section>
           What is <span class="danger">YOUR plan</span>?<br/>
-          What can you do <span class="expenses">without</span>?
-          <aside class="notes">
-            To wrap it up, I showed you my plan and how it went. It doesn't matter what I did, what matters is what you want to do.
-          </aside>
+          How can you reduce your <span class="expenses">expenses</span>?
         </section>
         <section>
           Thanks!! &#x1F64F;
         </section>
+        <section id="resources">
+          <h2>Resources</h2>
+          Quick anchor link: <a href="#resources">#resources</a>
+        </section>
         <section>
-          <h2>Extra resources:</h2>
+          <h2><a href="#good-starting-books">Good starting books</a></h2>
+        </section>
+        <section>
+          <h2>From the slides:</h2>
+          <ul>
+            <li><a href="https://www.mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement/">Mister Money Moustache (The shockingly simple math behind early retirement)</a></li>
+          <li><a href="https://earlyretirementextreme.com/ere-book">Early Retirement Extreme</a></li>
+            <li><a href="https://www.reddit.com/r/personalfinance">Reddit r/personalfinance</a></li>
+            <li><a href="https://www.bogleheads.org/wiki/Three-fund_portfolio">Three-fund portfolio</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/1z-zslX5lz2LL9NoOGY69mlHqswBMK8ZAfnXQDI63-bA/edit">My tracking sheet</a></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Extra:</h2>
           <ul>
             <li><a href="/pages/podcasts.html#fi">My podcast recommendations about FI</a></li>
             <li><a href="/pages/books.html#fi">My books recommendations about FI</a></li>
-            <li><a href="https://www.mrmoneymustache.com/2012/01/13/the-shockingly-simple-math-behind-early-retirement/">Mister Money Moustache (The shockingly simple math behind early retirement)</a></li>
             <li><a href="https://www.bogleheads.org/wiki/Bogleheads%C2%AE_investment_philosophy">Bogleheads investment philosophy</a></li>
           </ul>
         </section>
