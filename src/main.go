@@ -67,6 +67,20 @@ func mainPageHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Par
   w.Write([]byte(main_page))
 }
 
+func robotsPageHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Params) {
+  logRequest(req)
+
+  robots, err := ioutil.ReadFile("robots.txt")
+  if err != nil {
+    log.Printf("Error reading robots.txt %+v", err)
+    renderFailedPage(w)
+    return
+
+  }
+  w.Header().Add("Content-Type", "text/plain")
+  w.Write([]byte(robots))
+}
+
 type License struct {
   // Path relative to root of this repository.
   Path string
@@ -114,6 +128,7 @@ func licensesHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Par
 func main() {
   router := httprouter.New()
   router.GET("/", mainPageHandler)
+  router.GET("/robots.txt", robotsPageHandler)
   router.GET("/licenses", licensesHandler)
   router.ServeFiles("/posts/*filepath", http.Dir("html/posts"))
   router.ServeFiles("/pages/*filepath", http.Dir("html/pages"))

@@ -1,0 +1,28 @@
+# 80legs
+User-agent: 008
+Disallow: /
+
+# 80legs' new crawler
+User-agent: voltron
+Disallow: /
+
+User-agent: Yahoo Pipes 1.0
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: Amazonbot
+Disallow: /
+
+User-Agent: PerplexityBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: PiplBot
+Disallow: /
+
+User-Agent: *
+Allow: /
