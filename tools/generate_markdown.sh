@@ -3,7 +3,7 @@
 # https://github.com/karlb/karl.berlin.
 set -eu
 
-MARKDOWN="smu"
+MARKDOWN="cmark"
 OUTPUT_DIR="html"
 TMP_DIR=`mktemp -d`
 # We use an intermediate file as bash array sucks.

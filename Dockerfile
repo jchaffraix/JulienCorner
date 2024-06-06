@@ -2,15 +2,15 @@
 
 FROM alpine as build
 
-RUN apk add --no-cache go git make
+RUN apk add --no-cache go git make cmake g++
 
 # Create a user with no priviledge
 RUN addgroup -S builder
 RUN adduser -S -D -H builder
 
 # Install smu for generating the Markdown files.
-RUN git clone https://github.com/Gottox/smu.git smu
-RUN cd smu && make && make install && cd ..
+RUN git clone https://github.com/commonmark/cmark.git cmark
+RUN cd cmark && cmake && make install && cd ..
 
 COPY --chown=builder:builder . /src
 
