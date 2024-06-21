@@ -4,6 +4,7 @@
 set -eu
 
 MARKDOWN="cmark"
+MARKDOWN_FLAGS="--unsafe"
 OUTPUT_DIR="html"
 TMP_DIR=`mktemp -d`
 # We use an intermediate file as bash array sucks.
@@ -29,7 +30,7 @@ build_tsv_index() {
 build_homepage() {
   local output_path="$2/index.html"
   cat header.html | sed "s#{{TITLE}}#Homepage#" > "$output_path"
-  $MARKDOWN "index.md" >> "$output_path"
+  $MARKDOWN $MARKDOWN_FLAGS "index.md" >> "$output_path"
   while read -r f title create_time updated_time; do
     local relative_path=$(echo "$f" | sed -e 's/.md$/.html/')
     printf "%s&nbsp;<a href=\"/%s\">%s</a><br/>\n" "$create_time" "$relative_path" "$title" >> "$output_path"
@@ -46,7 +47,7 @@ build_html() {
 
     echo "Processing file: $f -> $output_path"
 		cat header.html | sed "s#{{TITLE}}#$title#" > "$output_path"
-    local content=$($MARKDOWN "$f")
+    local content=$($MARKDOWN $MARKDOWN_FLAGS "$f")
     echo "$content" | head -n 1 >> "$output_path"
     printf "Created on %s<br>\n" "$create_time" >> "$output_path"
     if [ "$create_time" != "$updated_time" ]; then
