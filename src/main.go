@@ -1,11 +1,15 @@
 package main
 
 import (
+  "errors"
   "fmt"
+  "io/fs"
   "io/ioutil"
   "log"
   "net/http"
   "os"
+  "path/filepath"
+  "strings"
 
   "github.com/julienschmidt/httprouter"
 )
@@ -124,21 +128,96 @@ func licensesHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Par
 
   renderPageHTML(w, content)
 }
- 
+
+func isRawPage(path string) bool {
+  // TODO: Switch to a more efficient DS.
+  return strings.HasPrefix(path, "presentations") || strings.HasPrefix(path, "cats") || strings.HasPrefix(path, "habits")
+}
+
+func isStaticPageAllowed(path string) bool {
+  // TODO: Switch to a more efficient DS.
+  for _, prefix := range []string{"pages", "posts", "presentations", "cats", "habits", "style"} {
+    if strings.HasPrefix(path, prefix) {
+      return true
+    }
+  }
+  return false
+}
+
+func staticHtmlPageHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Params) {
+  logRequest(req)
+
+  // We drop the leading /.
+  originalPath := req.URL.String()
+  path := filepath.Clean(originalPath[1:])
+
+  // Sanity check to prevent opening some filesystem files.
+  if !isStaticPageAllowed(path) {
+    log.Printf("... Return 404 on request to %s (invalid prefix on %s)", originalPath, path)
+    http.NotFound(w, req)
+    return
+  }
+
+  renderRawPage := isRawPage(path)
+  path = filepath.Join("html", path)
+  content, err := ioutil.ReadFile(path)
+  if err != nil {
+    // TODO: Handle "is a directory" as a 404 (or index.html redirect) instead of a 500.
+    if errors.Is(err, fs.ErrNotExist) {
+      log.Printf("... Couldn't find path %s (file at %s, error=%+v)", originalPath, path, err)
+      http.NotFound(w, req)
+    } else {
+      log.Printf("... Failed request to %s (can't read file at %s, error=%+v)", originalPath, path, err)
+      renderFailedPage(w)
+    }
+    return
+  }
+
+  extension := filepath.Ext(path)
+  switch (extension) {
+    case ".html":
+      if renderRawPage {
+        w.Header().Add("Content-Type", "text/html")
+        w.Write(content)
+      } else {
+        renderPageHTML(w, string(content))
+      }
+    case ".css":
+      w.Header().Add("Content-Type", "text/css")
+      w.Write(content)
+    case ".js":
+      w.Header().Add("Content-Type", "text/javascript")
+      w.Write(content)
+    case ".jpeg":
+      w.Header().Add("Content-Type", "image/jpeg")
+      w.Write(content)
+    case ".png":
+      w.Header().Add("Content-Type", "image/png")
+      w.Write(content)
+    case ".svg":
+      w.Header().Add("Content-Type", "text/svg")
+      w.Write(content)
+    default:
+      log.Printf("... Failed request to %s (unknown extension %s)", originalPath, extension)
+      renderFailedPage(w)
+  }
+}
+
 func main() {
   router := httprouter.New()
   router.GET("/", mainPageHandler)
   router.GET("/robots.txt", robotsPageHandler)
   router.GET("/licenses", licensesHandler)
-  router.ServeFiles("/posts/*filepath", http.Dir("html/posts"))
-  router.ServeFiles("/pages/*filepath", http.Dir("html/pages"))
-  router.ServeFiles("/presentations/*filepath", http.Dir("html/presentations"))
-  // Note: Some limitations of ServeFile are:
-  // 1. that if there is no 'index.html' in the directory, this will show the directory.
-  // 2. there is no Content-Type set on the file served.
-  router.ServeFiles("/cats/*filepath", http.Dir("html/cats"))
-  router.ServeFiles("/habits/*filepath", http.Dir("html/habits"))
-  router.ServeFiles("/style/*filepath", http.Dir("html/style"))
+  router.GET("/posts/*filepath", staticHtmlPageHandler)
+  router.GET("/pages/*filepath", staticHtmlPageHandler)
+  router.GET("/presentations/*filepath", staticHtmlPageHandler)
+  router.GET("/cats/*filepath", staticHtmlPageHandler)
+  router.GET("/habits/*filepath", staticHtmlPageHandler)
+  router.GET("/style/*filepath", staticHtmlPageHandler)
+  // Do not use router.ServerFile, prefer staticHtmlPageHandler instead as it supports:
+  // 1. Add a meaningful Content-Type based on the path.
+  // 2. Doesn't list the content of a directory.
+
   // TODO: Add XSS prevention using BlueMonday.
 
   port := os.Getenv("PORT")
