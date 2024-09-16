@@ -159,6 +159,7 @@ func staticHtmlPageHandler(w http.ResponseWriter, req *http.Request, ps httprout
   }
 
   renderRawPage := isRawPage(path)
+  isIcon := strings.HasPrefix(path, "style/icons")
   path = filepath.Join("html", path)
   content, err := ioutil.ReadFile(path)
   if err != nil {
@@ -195,7 +196,11 @@ func staticHtmlPageHandler(w http.ResponseWriter, req *http.Request, ps httprout
       w.Header().Add("Content-Type", "image/png")
       w.Write(content)
     case ".svg":
-      w.Header().Add("Content-Type", "text/svg")
+      if isIcon {
+        w.Header().Add("Content-Type", "image/svg+xml")
+      } else {
+        w.Header().Add("Content-Type", "text/svg")
+      }
       w.Write(content)
     default:
       log.Printf("... Failed request to %s (unknown extension %s)", originalPath, extension)
