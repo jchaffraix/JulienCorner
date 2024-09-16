@@ -129,11 +129,6 @@ func licensesHandler(w http.ResponseWriter, req *http.Request, ps httprouter.Par
   renderPageHTML(w, content)
 }
 
-func isRawPage(path string) bool {
-  // TODO: Switch to a more efficient DS.
-  return strings.HasPrefix(path, "presentations") || strings.HasPrefix(path, "cats") || strings.HasPrefix(path, "habits")
-}
-
 func isStaticPageAllowed(path string) bool {
   // TODO: Switch to a more efficient DS.
   for _, prefix := range []string{"pages", "posts", "presentations", "cats", "habits", "style"} {
@@ -158,7 +153,6 @@ func staticHtmlPageHandler(w http.ResponseWriter, req *http.Request, ps httprout
     return
   }
 
-  renderRawPage := isRawPage(path)
   isIcon := strings.HasPrefix(path, "style/icons")
   path = filepath.Join("html", path)
   content, err := ioutil.ReadFile(path)
@@ -177,12 +171,8 @@ func staticHtmlPageHandler(w http.ResponseWriter, req *http.Request, ps httprout
   extension := filepath.Ext(path)
   switch (extension) {
     case ".html":
-      if renderRawPage {
-        w.Header().Add("Content-Type", "text/html")
-        w.Write(content)
-      } else {
-        renderPageHTML(w, string(content))
-      }
+      w.Header().Add("Content-Type", "text/html")
+      w.Write(content)
     case ".css":
       w.Header().Add("Content-Type", "text/css")
       w.Write(content)
@@ -237,5 +227,3 @@ func main() {
   }
   log.Printf("Closing...")
 }
-
-
