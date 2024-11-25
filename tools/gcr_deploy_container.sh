@@ -10,17 +10,40 @@ export IMAGE_NAME="webapp"
 export TAG=$(date +%Y%m%d-%H%M%S)
 export LABEL="${REPOSITORY}/${PROJECT}/${ARTIFACTORY_REPO}/${IMAGE_NAME}:${TAG}"
 
+DOCKER=`which podman || true`
+if [ -z "$DOCKER" ]; then
+  DOCKER=`which docker || true`
+  if [ -z "$DOCKER" ]; then
+    echo "No valid container engine. Install podman/docker..."
+    exit 1
+  fi
+fi
+echo "Using "$DOCKER" to manage containers"
+
 # Check that we pass an authorization for a service account and log into it.
 # Else for CLI invokation, we just use any existing credentials.
 export SERVICE_ACCNT_FILE="${SERVICE_ACCNT_FILE:-}"
 if [[ "$SERVICE_ACCNT_FILE" != "" ]]; then
   gcloud auth activate-service-account "${SERVICE_ACCNT}" --key-file="$SERVICE_ACCNT_FILE"
   gcloud config set project "$PROJECT"
-  gcloud auth configure-docker "$REPOSITORY"
+  gcloud auth print-access-token --quiet \
+    --impersonate-service-account "${SERVICE_ACCNT}" | "$DOCKER" login \
+    -u oauth2accesstoken \
+    --password-stdin "https://$REPOSITORY"
+else
+  ACTUAL_PROJECT=`gcloud info|grep Project|cut -d[ -f2`
+  if [ "$PROJECT]" != "$ACTUAL_PROJECT" ]; then
+    echo "Project mismatch, use gcloud init to select $PROJECT"
+    exit 1
+  fi
+
+  gcloud auth print-access-token --quiet | "$DOCKER" login \
+    -u oauth2accesstoken \
+    --password-stdin "https://$REPOSITORY"
 fi
 
-docker build -t "$LABEL" .
-docker push "$LABEL"
+$DOCKER build -t "$LABEL" .
+$DOCKER push "$LABEL"
 
 echo "Pushed image successfully"
 echo ""
