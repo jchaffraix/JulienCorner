@@ -29,7 +29,7 @@ if [[ "$SERVICE_ACCNT_FILE" != "" ]]; then
   gcloud auth print-access-token --quiet \
     --impersonate-service-account "${SERVICE_ACCNT}" | "$DOCKER" login \
     -u oauth2accesstoken \
-    --password-stdin "https://$REPOSITORY"
+    --password-stdin "$REPOSITORY"
 else
   ACTUAL_PROJECT=`gcloud info|grep Project|cut -d[ -f2`
   if [ "$PROJECT]" != "$ACTUAL_PROJECT" ]; then
@@ -39,7 +39,7 @@ else
 
   gcloud auth print-access-token --quiet | "$DOCKER" login \
     -u oauth2accesstoken \
-    --password-stdin "https://$REPOSITORY"
+    --password-stdin "$REPOSITORY"
 fi
 
 $DOCKER build -t "$LABEL" .
