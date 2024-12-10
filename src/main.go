@@ -143,7 +143,7 @@ func staticHtmlPageHandler(w http.ResponseWriter, req *http.Request, ps httprout
   logRequest(req)
 
   // We drop the leading /.
-  originalPath := req.URL.String()
+  originalPath := req.URL.Path
   path := filepath.Clean(originalPath[1:])
 
   // Sanity check to prevent opening some filesystem files.
